@@ -1,0 +1,760 @@
+/* ==========================================================================
+   ABOUT PAGE STYLES - UXFOLIO "SORA" THEME
+   ========================================================================== */
+
+/* ===============================
+   HERO ABOUT
+   =============================== */
+.about-hero{
+    max-width:1180px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:360px 1fr;
+
+    gap:60px;
+
+    align-items:center;
+
+    padding:140px 32px 60px;
+}
+
+.about-image-card{
+
+    background:none;
+
+    padding:0;
+
+    border-radius:0;
+
+}
+
+.about-image-card img{
+
+    width:100%;
+
+    height:460px;
+
+    object-fit:cover;
+
+    border-radius:30px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.08);
+
+}
+
+.about-content-card{
+
+    background:none;
+
+    padding:0;
+
+    border-radius:0;
+
+}
+
+.about-tag{
+
+font-size:13px;
+
+letter-spacing:.18em;
+
+font-weight:600;
+
+color:#888;
+
+margin-bottom:22px;
+
+}
+
+.about-content-card h1{
+
+font-size:72px;
+
+line-height:1;
+
+letter-spacing:-3px;
+
+margin-bottom:18px;
+
+}
+
+.about-content-card h3{
+
+font-size:28px;
+
+font-weight:500;
+
+margin-bottom:28px;
+
+color:#666;
+
+}
+
+.about-content-card p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4A4744;
+    margin-bottom: 28px;
+}
+
+.about-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+/* ===============================
+   SECTIONS & TITLES
+   =============================== */
+.section-padding{
+
+padding:10px 32px 60px;
+
+max-width:1180px;
+
+margin:auto;
+
+}
+
+.section-padding:first-of-type{
+
+padding-top:0;
+
+}
+
+.section-padding:last-of-type{
+
+padding-bottom:0;
+
+}
+
+.section-heading{
+
+margin-bottom:32px;
+
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    color: var(--text-primary);
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+/* ===============================
+   BACKGROUND GRID (UXFOLIO SIDE-BY-SIDE CARDS)
+   =============================== */
+.background-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    align-items: start;
+}
+
+.background-card{
+
+background:#fff;
+
+border:1px solid #ECECEC;
+
+padding:32px 36px;
+
+border-radius:24px;
+
+transition:.35s;
+
+}
+
+.background-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 25px 60px rgba(0,0,0,.06);
+
+}
+
+.background-card h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 18px;
+    letter-spacing: -0.5px;
+}
+
+.resume-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.resume-item{
+
+display:flex;
+flex-direction:column;
+gap:3px;
+
+padding-bottom:16px;
+
+border-bottom:1px solid #ECECEC;
+
+}
+
+.resume-item:last-child{
+
+padding-bottom:0;
+
+border-bottom:none;
+
+}
+
+.resume-role {
+    font-size: 15px;
+    color: var(--text-primary);
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.resume-org {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.resume-date {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* ===============================
+   CERTIFICATIONS
+   =============================== */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.cert-card{
+
+border:1px solid #ECECEC;
+
+box-shadow:none;
+
+cursor:pointer;
+
+}
+
+.cert-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 20px 50px rgba(0,0,0,.06);
+
+}
+
+.cert-card:focus-visible{
+
+outline:2px solid var(--text-primary);
+
+outline-offset:3px;
+
+}
+
+.cert-hover-overlay{
+
+position:absolute;
+inset:0;
+
+background:rgba(17,17,17,.72);
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:8px;
+
+color:#fff;
+font-size:13px;
+font-weight:600;
+
+opacity:0;
+transition:opacity .25s ease;
+
+}
+
+.cert-hover-overlay i{
+
+font-size:22px;
+
+}
+
+.cert-card:hover .cert-hover-overlay,
+.cert-card:focus-visible .cert-hover-overlay{
+
+opacity:1;
+
+}
+
+.cert-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    background: #E4DFC5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.cert-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cert-placeholder-slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.cert-placeholder-slot i {
+    font-size: 32px;
+    color: var(--text-primary);
+}
+
+.cert-info {
+    padding: 24px;
+}
+
+.cert-info h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.cert-info p {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* ===============================
+   SKILLS & TOOLS (STACKED TOP-BOTTOM)
+   =============================== */
+.skills-stacked {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.skill-category-card{
+
+background:#fff;
+
+border:1px solid #ECECEC;
+
+padding:42px;
+
+}
+
+.category-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-tag{
+
+background:#F7F7F7;
+
+padding:14px 24px;
+
+font-size:15px;
+
+font-weight:500;
+
+border:1px solid #ECECEC;
+
+}
+
+.skill-tag:hover{
+
+background:#111;
+
+color:#fff;
+
+}
+
+.skill-tag:hover svg path {
+    fill: #FFFFFF !important;
+}
+
+/* ===============================
+   ANIMATIONS & RESPONSIVE
+   =============================== */
+@media(max-width:991px){
+
+.about-hero{
+
+grid-template-columns:1fr;
+
+gap:40px;
+
+padding:120px 24px 50px;
+
+}
+
+.about-content-card{
+
+text-align:center;
+
+}
+
+.about-content-card h1{
+
+font-size:52px;
+
+}
+
+.about-image-card{
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.about-image-card img{
+
+max-width:340px;
+
+height:420px;
+
+}
+
+}
+
+/* ===============================
+   CERTIFICATE LIGHTBOX MODAL
+   =============================== */
+.cert-modal{
+
+position:fixed;
+inset:0;
+z-index:2000;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+padding:24px;
+
+opacity:0;
+visibility:hidden;
+
+transition:opacity .3s ease, visibility .3s ease;
+
+}
+
+.cert-modal.is-open{
+
+opacity:1;
+visibility:visible;
+
+}
+
+.cert-modal-backdrop{
+
+position:absolute;
+inset:0;
+
+background:rgba(17,17,17,.7);
+
+backdrop-filter:blur(4px);
+-webkit-backdrop-filter:blur(4px);
+
+}
+
+.cert-modal-dialog{
+
+position:relative;
+
+background:#fff;
+
+border-radius:24px;
+
+width:100%;
+max-width:640px;
+
+max-height:88vh;
+
+overflow:hidden;
+
+display:flex;
+flex-direction:column;
+
+box-shadow:0 30px 80px rgba(0,0,0,.35);
+
+transform:translateY(24px) scale(.97);
+
+transition:transform .3s ease;
+
+}
+
+.cert-modal.is-open .cert-modal-dialog{
+
+transform:translateY(0) scale(1);
+
+}
+
+.cert-modal-close{
+
+position:absolute;
+top:16px;
+right:16px;
+z-index:5;
+
+width:38px;
+height:38px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border:none;
+border-radius:50%;
+
+background:rgba(255,255,255,.9);
+color:#111;
+
+font-size:20px;
+
+cursor:pointer;
+
+transition:.2s ease;
+
+}
+
+.cert-modal-close:hover{
+
+background:#111;
+color:#fff;
+
+}
+
+.cert-modal-img-wrapper{
+
+position:relative;
+
+width:100%;
+
+max-height:68vh;
+
+background:#F1EEE6;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+overflow:hidden;
+
+}
+
+.cert-modal-img-wrapper img{
+
+width:100%;
+height:100%;
+
+max-height:60vh;
+
+object-fit:contain;
+
+display:block;
+
+}
+
+.cert-modal-pdf{
+
+display:none;
+
+width:100%;
+
+height:68vh;
+
+border:none;
+
+}
+
+.cert-modal-pdf-hint{
+
+display:flex;
+align-items:center;
+gap:6px;
+
+padding:10px 26px 0;
+
+font-size:12px;
+color:var(--text-muted);
+
+}
+
+.cert-modal-pdf-hint i{
+
+font-size:15px;
+
+}
+
+.cert-modal-empty{
+
+display:none;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:14px;
+
+padding:60px 32px;
+
+color:var(--text-muted);
+text-align:center;
+font-size:14px;
+
+}
+
+.cert-modal-empty i{
+
+font-size:36px;
+color:var(--text-primary);
+
+}
+
+.cert-modal-empty code{
+
+background:#EDEAE0;
+padding:2px 8px;
+border-radius:6px;
+font-size:12.5px;
+
+}
+
+.cert-modal-info{
+
+padding:22px 26px 26px;
+
+display:flex;
+align-items:flex-end;
+justify-content:space-between;
+gap:16px;
+flex-wrap:wrap;
+
+}
+
+.cert-modal-info-text h4{
+
+font-size:18px;
+font-weight:700;
+color:var(--text-primary);
+margin-bottom:4px;
+
+}
+
+.cert-modal-info-text p{
+
+font-size:13.5px;
+color:var(--text-muted);
+
+}
+
+.cert-modal-open-link{
+
+flex-shrink:0;
+
+display:inline-flex;
+align-items:center;
+gap:6px;
+
+font-size:13px;
+font-weight:600;
+color:var(--text-primary);
+
+padding:9px 16px;
+
+border:1.5px solid var(--border-subtle);
+border-radius:999px;
+
+transition:.2s ease;
+
+}
+
+.cert-modal-open-link:hover{
+
+background:var(--text-primary);
+color:#fff;
+border-color:var(--text-primary);
+
+}
+
+@media(max-width:600px){
+
+.cert-modal-dialog{
+
+max-height:92vh;
+
+}
+
+.cert-modal-img-wrapper{
+
+max-height:46vh;
+
+}
+
+.cert-modal-img-wrapper img{
+
+max-height:46vh;
+
+}
+
+.cert-modal-pdf{
+
+height:46vh;
+
+}
+
+.cert-modal-info{
+
+flex-direction:column;
+align-items:stretch;
+
+}
+
+}
