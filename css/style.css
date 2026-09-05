@@ -1,5 +1,7 @@
-/* ==========================================================================
+
+/* ========================================================================== 
    UXFOLIO "SORA" THEME DESIGN SYSTEM - RADITA PORTFOLIO
+   THEME: WHITE + NAVY
    ========================================================================== */
 
 @font-face {
@@ -13,7 +15,7 @@
 /* ===============================
    RESET & VARIABLES
    =============================== */
-  * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -22,138 +24,156 @@
 
 :root {
 
-    /* Background */
-    --bg-page: #F8F7F5;
+    /* ===============================
+       BACKGROUND
+       =============================== */
+    --bg-page: #FFFFFF;
     --bg-section: #FFFFFF;
     --bg-card: #FFFFFF;
-    --bg-card-hover: #FAFAFA;
+    --bg-card-hover: #F8F9FA;
 
-    /* Typography */
-    --text-primary: #111111;
-    --text-secondary: #666666;
-    --text-light: #8B8B8B;
+    /* ===============================
+       NAVY COLOR PALETTE
+       =============================== */
+    --navy: #0B1F3A;
+    --navy-dark: #07172B;
+    --navy-light: #163A63;
+    --navy-soft: #EAF0F8;
 
-    /* Accent */
-    --accent: #111111;
-    --accent-hover: #2B2B2B;
+    /* ===============================
+       TYPOGRAPHY
+       =============================== */
+    --text-primary: #0B1F3A;
+    --text-secondary: #536174;
+    --text-light: #7D8998;
+    --text-muted: #7D8998;
 
-    /* Pill buttons (navbar resume, primary buttons) */
-    --pill-dark: #111111;
-    --pill-dark-hover: #2B2B2B;
+    /* ===============================
+       ACCENT
+       =============================== */
+    --accent: #0B1F3A;
+    --accent-hover: #163A63;
 
-    /* Muted text (used across about/contact/footer) */
-    --text-muted: #8B8B8B;
+    /* ===============================
+       PILL BUTTONS
+       =============================== */
+    --pill-dark: #0B1F3A;
+    --pill-dark-hover: #163A63;
 
-    /* Border */
-    --border: #ECECEC;
-    --border-subtle: #ECECEC;
+    /* ===============================
+       BORDER
+       =============================== */
+    --border: #E2E8F0;
+    --border-subtle: #E2E8F0;
 
-    /* Radius */
+    /* ===============================
+       RADIUS
+       =============================== */
     --radius-sm: 12px;
     --radius-md: 20px;
     --radius-lg: 32px;
 
-    /* Shadow */
-    --shadow-sm: 0 8px 24px rgba(0,0,0,.04);
-    --shadow-lg: 0 20px 60px rgba(0,0,0,.08);
+    /* ===============================
+       SHADOW
+       =============================== */
+    --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.08);
 
-    /* Width */
+    /* ===============================
+       WIDTH
+       =============================== */
     --container: 1180px;
 
-    /* Transition */
+    /* ===============================
+       TRANSITION
+       =============================== */
     --transition: .35s ease;
 }
 
-html{
-    scroll-behavior:smooth;
+
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-
+body {
     font-family: "Inter", sans-serif;
     background: var(--bg-page);
     color: var(--text-primary);
-    line-height:1.7;
-    overflow-x:hidden;
-    -webkit-font-smoothing:antialiased;
-
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
-.container{
-
-    width:min(100% - 48px,var(--container));
-    margin-inline:auto;
-
+.container {
+    width: min(100% - 48px, var(--container));
+    margin-inline: auto;
 }
 
-img{
-
-    width:100%;
-    display:block;
-
+img {
+    width: 100%;
+    display: block;
 }
 
-a{
-
-    color:inherit;
-    text-decoration:none;
-    transition:var(--transition);
-
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition);
 }
 
-ul{
-
-    list-style:none;
-
+ul {
+    list-style: none;
 }
 
-section{
-
-    padding:120px 0;
-
+section {
+    padding: 120px 0;
 }
 
-::selection{
-
-    background:#111;
-    color:#fff;
-
+::selection {
+    background: var(--navy);
+    color: #FFFFFF;
 }
+
+
 /* ===============================
    FLOATING PILL NAVBAR
    =============================== */
-header{
-
-    position:fixed;
-    top:24px;
-    left:0;
-    width:100%;
-    z-index:1000;
-    padding:0;
-
+header {
+    position: fixed;
+    top: 24px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0;
 }
 
 .navbar {
     pointer-events: auto;
     max-width: 740px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.92);
+
+    /* Clean White */
+    background: #FFFFFF;
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
+
     border-radius: 999px;
     padding: 10px 28px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+    border: 1px solid #E2E8F0;
+
     transition: all 0.3s ease;
 }
 
 .logo {
     font-size: 15px;
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--navy);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -170,58 +190,58 @@ header{
 .logo-dot {
     width: 14px;
     height: 14px;
-    background: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%);
+    background: var(--navy);
     border-radius: 50%;
     display: inline-block;
 }
 
-.nav-links{
-
-    display:flex;
-    gap:34px;
-    align-items:center;
-
+.nav-links {
+    display: flex;
+    gap: 34px;
+    align-items: center;
 }
 
-.nav-links a{
-
-    color:var(--text-secondary);
-    font-size:.96rem;
-    font-weight:500;
-    transition:.3s;
-
+.nav-links a {
+    color: var(--text-secondary);
+    font-size: .96rem;
+    font-weight: 500;
+    transition: .3s;
 }
 
-.nav-links a:hover{
-
-    color:#111;
-
+.nav-links a:hover {
+    color: var(--navy);
 }
 
-.nav-links a:hover,
 .nav-links a.active {
-    color: var(--text-primary);
+    color: var(--navy);
     font-weight: 600;
 }
 
+
+/* ===============================
+   RESUME BUTTON
+   =============================== */
 .nav-links .btn-resume {
-    background: var(--pill-dark);
+    background: var(--navy);
     color: #FFFFFF !important;
     font-size: 13px;
     font-weight: 600;
     padding: 10px 22px;
     border-radius: 999px;
+
     transition: all 0.25s ease;
+
     display: inline-flex;
     align-items: center;
     gap: 6px;
 }
 
 .nav-links .btn-resume:hover {
-    background: var(--pill-dark-hover);
+    background: var(--navy-light);
     transform: translateY(-1px);
     color: #FFFFFF !important;
 }
+
 
 /* ===============================
    BUTTONS
@@ -231,53 +251,71 @@ header{
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background: var(--pill-dark);
+
+    background: var(--navy);
     color: #FFFFFF;
+
     font-size: 14px;
     font-weight: 600;
+
     padding: 14px 28px;
     border-radius: 999px;
+
     transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-    background: var(--pill-dark-hover);
+    background: var(--navy-light);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 20px rgba(11, 31, 58, 0.18);
 }
 
+
+/* ===============================
+   SECONDARY BUTTON
+   =============================== */
 .btn-secondary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+
     background: transparent;
-    color: var(--text-primary);
-    border: 1.5px solid var(--text-primary);
+    color: var(--navy);
+
+    border: 1.5px solid var(--navy);
+
     font-size: 14px;
     font-weight: 600;
+
     padding: 13px 28px;
     border-radius: 999px;
+
     transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
-    background: var(--text-primary);
+    background: var(--navy);
     color: #FFFFFF;
+
     transform: translateY(-2px);
 }
 
+
 /* ===============================
-   FOOTER (UXFOLIO STYLE)
+   FOOTER
    =============================== */
 footer.uxfolio-footer {
-    padding: 50px 8% 40px;
+    padding: 20px 8% 40px;
     text-align: center;
+
     background: var(--bg-page);
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     max-width: var(--container);
     margin: 0 auto;
 }
@@ -292,9 +330,12 @@ footer.uxfolio-footer {
 .footer-email {
     font-size: 42px;
     font-weight: 700;
-    color: var(--text-primary);
+
+    color: var(--navy);
+
     margin-bottom: 32px;
     letter-spacing: -1px;
+
     transition: opacity 0.25s ease;
 }
 
@@ -318,33 +359,46 @@ footer.uxfolio-footer {
 .footer-social-icon {
     width: 44px;
     height: 44px;
+
     border-radius: 50%;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     border: 1.5px solid var(--border-subtle);
-    color: var(--text-primary);
+
+    color: var(--navy);
+
     font-size: 18px;
+
     transition: all 0.25s ease;
 }
 
 .footer-social-icon:hover {
-    background: var(--pill-dark);
+    background: var(--navy);
     color: #FFFFFF;
-    border-color: var(--pill-dark);
+
+    border-color: var(--navy);
+
     transform: translateY(-3px);
 }
 
 .footer-bottom {
     margin-top: 56px;
     padding-top: 26px;
+
     border-top: 1px solid var(--border-subtle);
+
     width: 100%;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     color: var(--text-muted);
     font-size: 13px;
+
     gap: 16px;
     flex-wrap: wrap;
 }
@@ -360,13 +414,15 @@ footer.uxfolio-footer {
 }
 
 .footer-bottom-links a:hover {
-    color: var(--text-primary);
+    color: var(--navy);
 }
+
 
 /* ===============================
    RESPONSIVE
    =============================== */
 @media (max-width: 768px) {
+
     header {
         padding: 14px 4%;
     }
