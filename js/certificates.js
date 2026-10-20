@@ -101,7 +101,7 @@
             const icon = placeholder.querySelector("i");
             const label = placeholder.querySelector("span");
             if (icon) icon.className = "ri-file-pdf-2-line";
-            if (label) label.textContent = "Lihat Sertifikat (PDF)";
+            if (label) label.textContent = "View certificate (PDF)";
         }
         // If a thumbnail image path IS provided, the <img> tag's own
         // src + onerror attributes (set in the HTML) already handle
