@@ -145,3 +145,117 @@
         max-width: 100%;
     }
 }
+
+/* get in touch card (same as the case study pages) */
+.uxfolio-footer{
+    padding-top:40px;
+}
+
+.cta-card{
+    position:relative;
+    overflow:hidden;
+    width:100%;
+    background:var(--navy);
+    border-radius:var(--radius-lg);
+    padding:56px;
+    text-align:left;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:32px;
+    margin-bottom:8px;
+}
+
+.cta-card::before,
+.cta-card::after{
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.06);
+}
+
+.cta-card::before{ width:320px; height:320px; top:-140px; right:-80px; }
+.cta-card::after{ width:220px; height:220px; bottom:-110px; left:-60px; }
+.cta-card > *{ position:relative; z-index:1; }
+
+.cta-text{ max-width:520px; }
+
+.cta-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:13px;
+    font-weight:600;
+    color:#fff;
+    background:rgba(255,255,255,.12);
+    padding:6px 16px;
+    border-radius:999px;
+    margin-bottom:20px;
+}
+
+.cta-badge span{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#4ADE80;
+}
+
+.cta-card h2{
+    font-size:clamp(28px, 5vw, 40px);
+    line-height:1.15;
+    letter-spacing:-1px;
+    font-weight:800;
+    color:#fff;
+    margin-bottom:12px;
+}
+
+.cta-card p{
+    font-size:16px;
+    line-height:1.7;
+    color:rgba(255,255,255,.72);
+    margin:0;
+}
+
+.cta-btn{
+    flex-shrink:0;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:#fff;
+    color:var(--navy);
+    font-size:15px;
+    font-weight:700;
+    padding:16px 32px;
+    border-radius:999px;
+    transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.cta-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 14px 30px rgba(0,0,0,.25);
+}
+
+.cta-btn i{
+    font-style:normal;
+    display:inline-block;
+    transition:transform .25s ease;
+}
+
+.cta-btn:hover i{
+    transform:translate(3px, -3px);
+}
+
+@media(max-width:991px){
+    .approach-grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
+    .about-actions{ justify-content:center; }
+    .about-content-card p{ margin-left:auto; margin-right:auto; }
+}
+
+@media(max-width:768px){
+    .cta-card{ flex-direction:column; align-items:flex-start; padding:40px 28px; gap:24px; }
+    .skill-category-card{ padding:28px 22px; }
+}
+
+@media(max-width:560px){
+    .approach-grid{ grid-template-columns:1fr; }
+}
