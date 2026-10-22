@@ -1,144 +1,195 @@
 /* ==========================================================================
-   CONTACT PAGE STYLES - UXFOLIO "SORA" THEME
+   CONTACT PAGE
    ========================================================================== */
 
 .connect-hero {
+    position: relative;
     width: 100%;
-    max-width: 1180px;
+    max-width: var(--container);
     margin: 0 auto;
-
-    min-height: 80vh;
-
-    padding: 170px 32px 120px;
+    min-height: 100vh;
+    padding: 160px 32px 60px;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.05fr;
     align-items: center;
     gap: 80px;
 }
 
 /* LEFT: TEXT */
 .contact-tag {
-    display: block;
-
-    color: var(--text-muted);
-    font-size: 13px;
-    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 14px;
+    letter-spacing: .18em;
+    color: var(--blue-dark);
+    background: var(--blue-soft);
+    padding: 7px 16px;
+    border-radius: 999px;
+    margin-bottom: 22px;
+}
+
+.contact-tag::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--blue);
 }
 
 .connect-text h1 {
-    font-size: 56px;
-    font-weight: 700;
-    color: var(--text-primary);
-    line-height: 1.1;
-    margin-bottom: 20px;
-    letter-spacing: -1.5px;
+    font-size: clamp(44px, 6.4vw, 76px);
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -.045em;
+    margin-bottom: 24px;
+
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    padding-bottom: .06em;
 }
 
 .connect-text p {
-    max-width: 420px;
-
-    font-size: 17px;
-    color: #595550;
-    line-height: 1.8;
+    max-width: 440px;
+    font-size: 17.5px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+    padding-left: 22px;
+    border-left: 3px solid var(--blue-soft);
 }
 
 /* RIGHT: CHANNELS */
 .connect-channels {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 16px;
 }
 
 .connect-channel-item {
+    position: relative;
+    overflow: hidden;
+
     display: flex;
     align-items: center;
-    gap: 16px;
-
-    padding: 18px 22px;
+    gap: 18px;
+    padding: 20px 24px;
 
     background: var(--bg-card);
-    border-radius: 20px;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    box-shadow: var(--shadow-xs);
 
-    transition: all 0.3s ease;
+    transition: transform .35s cubic-bezier(.22, 1, .36, 1), box-shadow .35s ease,
+                border-color .35s ease, background .35s ease;
+}
+
+.connect-channel-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--gradient);
+    opacity: 0;
+    transition: opacity .35s ease;
+    z-index: 0;
+}
+
+.connect-channel-item > * {
+    position: relative;
+    z-index: 1;
 }
 
 .connect-channel-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+    transform: translateY(-4px) translateX(4px);
+    border-color: transparent;
+    box-shadow: 0 22px 46px rgba(11, 31, 58, .28);
+}
+
+.connect-channel-item:hover::before {
+    opacity: 1;
 }
 
 .connect-channel-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    width: 48px;
-    height: 48px;
+    width: 54px;
+    height: 54px;
     flex-shrink: 0;
+    font-size: 24px;
+    color: var(--blue-dark);
+    background: var(--blue-soft);
+    border-radius: 16px;
+    transition: all .35s ease;
+}
 
-    font-size: 22px;
-    color: var(--text-primary);
-
-    background: #ffffff;
-    border-radius: 50%;
+.connect-channel-item:hover .connect-channel-icon {
+    background: rgba(255, 255, 255, .16);
+    color: #fff;
 }
 
 .connect-channel-text {
     display: flex;
     flex-direction: column;
     gap: 2px;
-
     flex: 1;
+    min-width: 0;
 }
 
 .connect-channel-text strong {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    transition: color .3s ease;
 }
 
 .connect-channel-text span {
-    font-size: 14px;
+    font-size: 14.5px;
     color: var(--text-muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color .3s ease;
 }
 
 .connect-channel-arrow {
-    font-size: 20px;
-    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    font-size: 19px;
+    color: var(--navy);
+    background: var(--bg-card-hover);
+    transition: all .35s ease;
+}
 
-    transition: transform 0.3s ease;
+.connect-channel-item:hover .connect-channel-text strong,
+.connect-channel-item:hover .connect-channel-text span {
+    color: #fff;
+}
+
+.connect-channel-item:hover .connect-channel-text span {
+    color: rgba(255, 255, 255, .78);
 }
 
 .connect-channel-item:hover .connect-channel-arrow {
-    transform: translate(3px, -3px);
-}
-
-/* Animation */
-.connect-hero {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.7s ease;
-}
-
-.show {
-    opacity: 1;
-    transform: translateY(0);
+    background: #fff;
+    color: var(--navy);
+    transform: rotate(45deg);
 }
 
 @media (max-width: 900px) {
     .connect-hero {
         grid-template-columns: 1fr;
         gap: 48px;
-
-        padding: 140px 24px 90px;
-    }
-
-    .connect-text h1 {
-        font-size: 40px;
+        min-height: auto;
+        padding: 130px 24px 40px;
     }
 
     .connect-text p {
@@ -146,116 +197,19 @@
     }
 }
 
-/* get in touch card (same as the case study pages) */
-.uxfolio-footer{
-    padding-top:40px;
-}
+@media (max-width: 480px) {
+    .connect-channel-item {
+        padding: 16px 18px;
+        gap: 14px;
+    }
 
-.cta-card{
-    position:relative;
-    overflow:hidden;
-    width:100%;
-    background:var(--navy);
-    border-radius:var(--radius-lg);
-    padding:56px;
-    text-align:left;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:32px;
-    margin-bottom:8px;
-}
+    .connect-channel-icon {
+        width: 46px;
+        height: 46px;
+        font-size: 21px;
+    }
 
-.cta-card::before,
-.cta-card::after{
-    content:"";
-    position:absolute;
-    border-radius:50%;
-    background:rgba(255,255,255,.06);
-}
-
-.cta-card::before{ width:320px; height:320px; top:-140px; right:-80px; }
-.cta-card::after{ width:220px; height:220px; bottom:-110px; left:-60px; }
-.cta-card > *{ position:relative; z-index:1; }
-
-.cta-text{ max-width:520px; }
-
-.cta-badge{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    font-size:13px;
-    font-weight:600;
-    color:#fff;
-    background:rgba(255,255,255,.12);
-    padding:6px 16px;
-    border-radius:999px;
-    margin-bottom:20px;
-}
-
-.cta-badge span{
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    background:#4ADE80;
-}
-
-.cta-card h2{
-    font-size:clamp(28px, 5vw, 40px);
-    line-height:1.15;
-    letter-spacing:-1px;
-    font-weight:800;
-    color:#fff;
-    margin-bottom:12px;
-}
-
-.cta-card p{
-    font-size:16px;
-    line-height:1.7;
-    color:rgba(255,255,255,.72);
-    margin:0;
-}
-
-.cta-btn{
-    flex-shrink:0;
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    background:#fff;
-    color:var(--navy);
-    font-size:15px;
-    font-weight:700;
-    padding:16px 32px;
-    border-radius:999px;
-    transition:transform .25s ease, box-shadow .25s ease;
-}
-
-.cta-btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 14px 30px rgba(0,0,0,.25);
-}
-
-.cta-btn i{
-    font-style:normal;
-    display:inline-block;
-    transition:transform .25s ease;
-}
-
-.cta-btn:hover i{
-    transform:translate(3px, -3px);
-}
-
-@media(max-width:991px){
-    .approach-grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
-    .about-actions{ justify-content:center; }
-    .about-content-card p{ margin-left:auto; margin-right:auto; }
-}
-
-@media(max-width:768px){
-    .cta-card{ flex-direction:column; align-items:flex-start; padding:40px 28px; gap:24px; }
-    .skill-category-card{ padding:28px 22px; }
-}
-
-@media(max-width:560px){
-    .approach-grid{ grid-template-columns:1fr; }
+    .connect-channel-text span {
+        font-size: 13px;
+    }
 }
